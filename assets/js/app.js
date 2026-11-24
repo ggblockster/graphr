@@ -74,7 +74,20 @@ function draw() {
     ctx.lineTo(w,cy);
     ctx.stroke();
 
-    const cell = scale;
+    const raw = 50 / scale; // 50 = target spacing
+    const mag = 10 ** Math.floor(Math.log10(raw));
+    const norm = raw / mag;
+    if (norm < 1.5) {
+        norm = 1
+    } else if (norm < 3.5) {
+        norm = 2
+    } else if (norm < 7.5) {
+        norm = 5
+    } else {
+        norm = 10
+    }
+    const unit = norm * mag;
+    const cell = unit * scale;
     ctx.fillStyle = pointcol;
     for (let py = cy % cell; py < h; py += cell) {
         for (let px = cx % cell; px < w; px += cell) {
