@@ -130,13 +130,16 @@ function setRel(latex) {
     console.log(sects);
     if (!sects[1]) return;
     try {
-        let gxy = [sects[0].compile(), sects[1].compile()];
+        let gxy = [
+            texMathParser.parseTex(sects[0]).compile(),
+            texMathParser.parseTex(sects[1]).compile()
+        ];
         g = (x,y) => {
             [x,y] = [gxy[0].evaluate(),gxy[1].evaluate];
         }
         console.log(g(0,0),g(3,0),g(5,0));
-    } catch {
-        console.warn("Half-typed LaTeX");
+    } catch(e) {
+        console.warn("Half-typed LaTeX", `Error: ${e}.`);
     }
 }
 
