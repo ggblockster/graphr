@@ -56,7 +56,7 @@ function draw() {
         return [cx + x * scale, cy - y * scale];
     }
     function toMathPoint(px,py) {
-        return [(px - cx) / scale, (py-cy) / scale];
+        return [(px - cx) / scale, (py-cy) / -scale];
     }
     console.log(toMathPoint(...toPixel(2,3)));
 
