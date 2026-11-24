@@ -55,6 +55,10 @@ function draw() {
     function toPixel(x,y) {
         return [cx + x * scale, cy - y * scale];
     }
+    function toMathPoint(px,py) {
+        return [(px - cx) / scale, (py-cy) / scale];
+    }
+    console.log(toMathPoint(...toPixel(2,3)));
 
     const xMin = (0-cx)/scale; const xMax = (w-cx)/scale;
     const step = 0.5 / scale;
