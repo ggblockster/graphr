@@ -102,6 +102,7 @@ function draw() {
 }
 
 function setExpr(latex) {
+    setRel(latex);
     let compiled;
     try {
         compiled = texMathParser.parseTex(latex).compile()
@@ -124,6 +125,10 @@ function setExpr(latex) {
 }
 
 let g = null;
+function setRel(latex) {
+    const sects = latex.split("=");
+    console.log(sects);
+}
 
 
 function zoom(event) {
