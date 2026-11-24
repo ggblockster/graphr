@@ -76,7 +76,7 @@ function draw() {
 
     const raw = 50 / scale; // 50 = target spacing
     const mag = 10 ** Math.floor(Math.log10(raw));
-    const norm = raw / mag;
+    let norm = raw / mag;
     if (norm < 1.5) {
         norm = 1
     } else if (norm < 3.5) {
