@@ -130,12 +130,14 @@ function zoom(event) {
     event.preventDefault();
     scale *= Math.exp(-event.deltaY * 0.01);
     scale = Math.min(Math.max(1, scale), 350);
+    document.getElementById("zoomshow").textContent = `${Math.round(scale/40*100)}%`
     draw();
 }
 
 function zoom2(amnt) {
     scale *= Math.exp(amnt * 0.01);
     scale = Math.min(Math.max(1, scale), 350);
+    document.getElementById("zoomshow").textContent = `${Math.round(scale/40*100)}%`
     draw();
 }
 
