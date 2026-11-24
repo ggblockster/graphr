@@ -141,11 +141,22 @@ function zoom2(amnt) {
     draw();
 }
 
+function zoomReset() {
+    scale = 40;
+    document.getElementById("zoomshow").textContent = `${Math.round(scale/40*100)}%`
+    draw();
+}
+
 document.getElementById("zoomIn").addEventListener("click",()=>{
     zoom2(24);
 });
+
 document.getElementById("zoomOut").addEventListener("click",()=>{
     zoom2(-24);
+});
+
+document.getElementById("zoomReset").addEventListener("click",()=>{
+    zoomReset();
 });
 
 draw();
