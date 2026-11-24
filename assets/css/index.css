@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Math&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sometype%20Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@font-face {
+    font-family: "phosphor";
+    src: url("/assets/Phosphor.woff2") format("woff2");
+}
+
+* {
+    margin: 0;
+}
+
+:root {
+    /* colours */
+    --col-bg: #141a28;
+    --col-surface: #192133;
+    --col-surface-hover: #1e273b;
+    --col-surface-2: #26334b;
+    --col-surface-3: #34445f;
+    --col-border: #303e58;
+    --col-border-soft: #26334b;
+
+    --col-text: #dbd7ca;
+    --col-text-muted: #dedcd5;
+    --col-text-faint: #8f99a8;
+    --col-btnText: var(--col-text);
+
+    --col-accent: #4a86ee;
+    --col-accent-soft: #7ba5f2;
+    --col-accent-deep: #2f63c2;
+
+    --col-accent-blue: #7888aa;
+    --col-accent-yellow: #d2bc7c;
+    --col-accent-pink: #b8849b;
+
+    --col-success: #4d9375;
+    --col-warning: #d49a57;
+    --col-error: #b86568;
+    --col-info: #7888aa;
+    --col-link: #4a86ee;
+    --col-danger: #b8656840;
+
+    --col-code-bg: #151c2a;
+    --col-selection: #eeeeee14;
+    --col-shadow: #151c2aa9;
+    --col-shadow-light: #0b101a59;
+    --col-shadow-2: #0b101aa9;
+    --col-light: #192133e4;
+    --col-light-2: #eeeeee10;
+
+    --font-main: "Manrope", "Inter", "IBM Plex Sans", Arial, sans-serif, system-ui;
+    --font-mono: "Sometype Mono", Monaco, "Andane Mono", "Consolas", "Cascadia Mono", monospace;
+    --font-icon: "phosphor";
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    background-color: var(--col-bg);
+}
+
+ul.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: stretch;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+    font-family: var(--font-main);
+    background-color: var(--col-surface);
+    border-bottom: var(--col-border) 2px solid;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    .block2 {
+        margin-left: auto;
+    }
+    .playful {
+        color: var(--col-accent);
+    }
+    li a {
+        color: var(--col-text);
+        text-decoration: none;
+        padding: 10px 16px;
+        border-radius: 0.2em;
+        transition: 0.3s;
+    }
+    li a.link:hover {
+        animation: accentAnim 3s linear infinite;
+        background-color: var(--col-surface-2);
+        border-radius: 0.6em;
+        cursor: pointer;
+    }
+    li a img {
+        height: 1.3em;
+        vertical-align: -0.25em;
+    }
+}
+
+@keyframes accentAnim {
+    0% {
+        color: var(--col-accent-blue);
+    } 33.33% {
+        color: var(--col-accent-pink);
+    } 66.66% {
+        color: var(--col-accent-yellow);
+    } 100% {
+        color: var(--col-accent-blue);
+    }
+}
+
+main {
+    top: 63px;
+    overflow-y: auto;
+    position: absolute;
+    width: 100vw;
+    height: calc(100vh - 63px);
+    scrollbar-color: var(--col-surface-3) var(--col-bg);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    ::selection {
+        background-color: var(--col-selection);
+    }
+}
+
+[data-noselect="true"] {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+main.flex {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    container-type: size;
+    section#sidebar {
+        width: 25%;
+        background-color: var(--col-surface);
+        height: 100%;
+        box-sizing: border-box;
+        border-right: var(--col-border) 2px solid;
+    }
+    section#main {
+        width: 75%;
+        box-sizing: border-box;
+        background-color: var(--col-code-bg);
+        height: 100%;
+    }
+    div.mqf {
+        display: flex;
+    }
+    span.mqi {
+        background-color: var(--col-surface-2);
+        color: var(--col-text);
+        width: 100%;
+        padding: 1rem;
+        transition: 0.2s;
+        border: none;
+        caret-color: var(--col-text-faint) !important;
+        outline-color: var(--col-accent);
+    }
+    span.mqb {
+        aspect-ratio: 1;
+        width: 3.5rem;
+        background-color: var(--col-surface);
+        padding: 0.5rem;
+        box-sizing: border-box;
+        display: grid;
+        place-items: center;
+        img {
+            width: 100%;
+            aspect-ratio: 1;
+        }
+    }
+    span.mqi:focus {
+        background-color: var(--col-surface-3);
+    }
+    .mq-math-mode .mq-selection,
+    .mq-editable-field .mq-selection,
+    .mq-math-mode .mq-selection .mq-non-leaf,
+    .mq-editable-field .mq-selection .mq-non-leaf,
+    .mq-math-mode .mq-selection .mq-scaled,
+    .mq-editable-field .mq-selection .mq-scaled,
+    .mq-selection .mq-matrixed {
+        background: rgb(from var(--col-accent-pink) r g b / 0.25) !important;
+    }
+    .mq-editable-field .mq-cursor {
+        border-left-color: var(--col-accent-pink);
+    }
+    canvas#draw {
+        width: 100%;
+        height: 100%;
+        background-color: var(--col-bg);
+        cursor: grab;
+        touch-action: none;
+        user-select: none;
+    }
+    canvas#draw:active {
+        cursor: grabbing;
+    }
+    #main {
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+}
+
+.ph-solid {
+    font-style: normal;
+    font-synthesis: none;
+    font-weight: normal;
+    font-family: var(--font-icon);
+    vertical-align: -0.15em;
+}
+main div#mov {
+    position: absolute;
+    width: 50%;
+    pointer-events: none;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    div#zoompanel {
+        pointer-events: all;
+        margin: 8px;
+        margin-top: auto;
+        background-color: var(--col-surface);
+        width: min-content;
+        border-radius: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 0.5rem;
+        font-family: var(--font-main);
+        color: var(--col-text);
+        button {
+            font-size: 1.6rem;
+            aspect-ratio: 1;
+            background-color: var(--col-surface-2);
+            border-radius: 0.6rem;
+            border: none;
+            cursor: pointer;
+            color: var(--col-text);
+            transition: 0.2s;
+        }
+        button:hover {
+            background-color: oklch(from var(--col-surface-2) calc(l + 0.04) c h);
+            transform: scale(1.05);
+        }
+        button:active {
+            color: var(--col-accent);
+        }
+    }
+}
