@@ -128,6 +128,16 @@ let g = null;
 function setRel(latex) {
     const sects = latex.split("=");
     console.log(sects);
+    if (!sects[1]) return;
+    try {
+        let gxy = [sects[0].compile(), sects[1].compile()];
+        g = (x,y) => {
+            [x,y] = [gxy[0].evaluate(),gxy[1].evaluate];
+        }
+        console.log(g(0,0),g(3,0),g(5,0));
+    } catch {
+        console.warn("Half-typed LaTeX");
+    }
 }
 
 
