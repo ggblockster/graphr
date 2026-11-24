@@ -136,6 +136,7 @@ function setRel(latex) {
         ];
         g = (x,y) => {
             [x,y] = [gxy[0].evaluate({x,y}),gxy[1].evaluate({x,y})];
+            return x - y;
         }
         console.log(g(0,0),g(3,0),g(5,0));
     } catch(e) {
