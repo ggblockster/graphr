@@ -32,7 +32,7 @@ var scale = 40;
 canvas.onwheel = zoom;
 
 const g1col = "royalblue";
-const pointcol = "white";
+const pointcol = "#ffffff5d";
 const axiscol = "#303e58";
 
 function resize() {
@@ -74,6 +74,14 @@ function draw() {
     ctx.lineTo(w,cy);
     ctx.stroke();
 
+    const cell = 8;
+    ctx.fillStyle = pointcol;
+    for (let py = 0; py < h; py += cell) {
+        for (let px = 0; px < w; px += cell) {
+            ctx.fillRect(px,py,2,2);
+        }
+    }
+    
     let penDown = false;
     ctx.strokeStyle = String(g1col);
     ctx.lineWidth = 4;
