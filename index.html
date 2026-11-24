@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>graphr v0.1</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/assets/img/ic192.png">
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mathquill@0.10.1-a/build/mathquill.css" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathquill@0.10.1-a/build/mathquill.min.js" crossorigin="anonymous"></script>
+</head>
+<body class="">
+    <header> <!-- navbar -->
+        <ul class="navbar">
+            <li class="block1">
+                <li class="item">
+                    <a href="/">
+                        <img src="/assets/img/ic192.png" alt="icon" class="logo">
+                        graphr
+                    </a>
+                </li>
+            </li>
+            <li class="block2">
+                <li>
+                    <a href="https://github.com/ggblockster/graphr/tree/main" class="item link 1" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github icon"></i>
+                        <span class="txt">Source</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="item link 2">
+                        <i class="fa-solid fa-circle-info icon"></i>
+                        <span class="txt">Information</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="item link 3">
+                        <i class="fa-solid fa-sliders icon"></i>
+                        <span class="txt">Settings</span>
+                    </a>
+                </li>
+            </li>
+        </ul>
+    </header>
+    <main class="flex">
+        <section id="sidebar">
+            <div class="mqf">
+                <span class="mqb">
+                    <img src="/assets/img/graph.svg" alt="graph">
+                </span>
+                <span id="mq1" class="mqi"></span>
+            </div>
+        </section>
+        <section id="main">
+            <div id="mov">
+                <div id="zoompanel">
+                    <button id="zoomIn" class="ph-solid">magnifying-glass-plus</button>
+                    <button id="zoomOut" class="ph-solid">magnifying-glass-minus</button>
+                    <p id="zoomshow">0%</p>
+                </div>
+            </div>
+            <canvas id="draw"></canvas>
+        </section>
+    </main>
+</body>
+<script type="module" src="/assets/js/app.js"></script>
+</html>

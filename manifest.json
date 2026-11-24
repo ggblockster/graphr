@@ -1,0 +1,26 @@
+{
+    "id": "/",
+    "name": "graphr",
+    "short_name": "graphr",
+    "description": "A simple, calculator and graphing tool to suit your needs.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "any",
+    "background_color": "#101014",
+    "theme_color": "#101014",
+    "version": "0.1",
+    "publisher": "ggblockster",
+    "icons": [
+        {
+        "src": "/assets/img/ic192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+        },
+        {
+        "src": "/assets/img/ic512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+        }
+    ]
+}
