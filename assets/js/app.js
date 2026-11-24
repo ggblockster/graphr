@@ -58,7 +58,6 @@ function draw() {
     function toMathPoint(px,py) {
         return [(px - cx) / scale, (py-cy) / -scale];
     }
-    console.log(toMathPoint(...toPixel(2,3)));
 
     const xMin = (0-cx)/scale; const xMax = (w-cx)/scale;
     const step = 0.5 / scale;
@@ -156,7 +155,7 @@ let g = null;
 function setRel(latex) {
     const sects = latex.split("=");
     console.log(sects);
-    if (!sects[1]) return;
+    if (!sects[1]) {g = null;return};
     try {
         let gxy = [
             texMathParser.parseTex(sects[0]).compile(),
