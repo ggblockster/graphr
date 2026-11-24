@@ -78,6 +78,9 @@ function draw() {
     ctx.fillStyle = pointcol;
     for (let py = cy % cell; py < h; py += cell) {
         for (let px = cx % cell; px < w; px += cell) {
+            if (Math.abs(px - cx) < 0.5 || Math.abs(py-cy) < 0.5) {
+                continue
+            }
             ctx.fillRect(px,py,2,2);
         }
     }
