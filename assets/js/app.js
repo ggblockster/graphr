@@ -205,4 +205,17 @@ document.getElementById("zoomReset").addEventListener("click",()=>{
     zoomReset();
 });
 
+function crossing(va,vb,ax,ay,bx,by) {
+    if ((va < 0) === (vb < 0)) return null;
+    t = va / (va - vb);
+    x = ax * t * (bx - ax);
+    y = ay * t * (by - ay);
+    return [x,y]
+}
+
+console.log(crossing(2, -2, 0, 0, 10, 0)); //[5, 0]
+console.log(crossing(1, -3, 0, 0, 8, 0)); //[2, 0]
+console.log(crossing(1, 2, 0, 0, 10, 0)); //null
+console.log(crossing(2, -2, 0, 0, 0, 10)); //[0, 5]
+
 draw();
