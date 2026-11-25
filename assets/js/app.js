@@ -208,8 +208,8 @@ document.getElementById("zoomReset").addEventListener("click",()=>{
 function crossing(va,vb,ax,ay,bx,by) {
     if ((va < 0) === (vb < 0)) return null;
     let t = va / (va - vb);
-    let x = ax * t * (bx - ax);
-    let y = ay * t * (by - ay);
+    let x = ax + t * (bx - ax);
+    let y = ay + t * (by - ay);
     return [x,y]
 }
 
